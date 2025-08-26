@@ -31,12 +31,10 @@ def index():
 @app.route("/registered")
 def registered():
     try:
-        response = supabase.table("users").select("*").execute()
-        users = response.data  # <-- must use .data
+        users = supabase.table("users").select("*").execute().data
     except Exception as e:
         return f"Error fetching data: {e}"
     return render_template("registered.html", users=users)
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
