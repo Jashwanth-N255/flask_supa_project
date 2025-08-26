@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Your Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Enter Your Name and Age</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="number" name="age" placeholder="Your Age" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
